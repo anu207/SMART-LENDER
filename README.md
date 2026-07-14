@@ -1,66 +1,27 @@
-# Smart Lender — Loan Approval Prediction
+SMART LENDER :
+Smart Lender is a simple web app that predicts whether a loan should be approved or rejected. It looks at details like income, credit history, education, and marital status, and gives an instant answer using a machine learning model.
 
-A complete, working version of the Smart Lender project: dataset, EDA/model-training
-notebook, and a Flask web app that predicts loan approval.
+Banks usually check loan applications by hand, which takes time and can be inconsistent. This project makes that process faster and fairer by letting a trained model do the first check.
 
-## Folder structure
-```
-SmartLender/
-├── Dataset/
-│   ├── generate_dataset.py     # generates loan_prediction.csv
-│   └── loan_prediction.csv     # 614-row loan applicant dataset
-├── Training/
-│   └── Loan Prediction using ML.ipynb   # EDA, preprocessing, SMOTE, model training
-├── Flask/
-│   ├── app.py                  # Flask backend
-│   ├── rdf.pkl                 # trained model (already generated & tested)
-│   ├── scale1.pkl              # fitted StandardScaler (already generated & tested)
-│   ├── static/css/input.css
-│   └── templates/
-│       ├── home.html
-│       ├── input.html
-│       └── output.html
-└── requirements.txt
-```
+## How it works
 
-## About the dataset
-`loan_prediction.csv` is a synthetic dataset built to match the schema of the
-well-known Kaggle/Analytics Vidhya "Loan Prediction" dataset (Loan_ID, Gender,
-Married, Dependents, Education, Self_Employed, ApplicantIncome,
-CoapplicantIncome, LoanAmount, Loan_Amount_Term, Credit_History,
-Property_Area, Loan_Status), including realistic missing values. If you'd
-rather use the original dataset, just replace this CSV with it — the column
-names are identical, so the notebook needs no changes.
+A user fills in a short form with their income, loan amount, credit history, and a few other details. Flask (a Python web framework) takes this information, passes it to a saved machine learning model, and shows whether the loan is likely to be approved or rejected.
 
-## Setup
-```bash
-cd SmartLender
-python -m venv venv
-source venv/bin/activate        # Windows: venv\Scripts\activate
-pip install -r requirements.txt
-```
+Behind the scenes, the model was built by cleaning up real loan data, filling in missing values, balancing the dataset so it isn't biased toward one outcome, and then training a few different models to see which one works best.
 
-## Step 1 — Train the model (optional — rdf.pkl / scale1.pkl are already included)
-Open `Training/Loan Prediction using ML.ipynb` in Jupyter/Anaconda and run all
-cells. It will regenerate `Flask/rdf.pkl` and `Flask/scale1.pkl`.
-```bash
-jupyter notebook "Training/Loan Prediction using ML.ipynb"
-```
+## What's inside
 
-## Step 2 — Run the Flask app
-```bash
-cd Flask
-python app.py
-```
-Open the URL shown in the terminal (usually `http://127.0.0.1:5000`), click
-**Predict**, fill in the applicant details, and submit to see the result.
+The project has three main parts. The **Dataset** folder holds the loan data used for training. The **Training** folder has a notebook that explores the data, cleans it, and trains the model. The **Flask** folder has the actual web app people use, along with the saved model.
 
-## Notes
-- The model, scaler, and full Flask app were tested end-to-end in this
-  environment (home page → form → prediction) before delivery.
-- `app.py` feeds inputs to the model in the exact same column order used
-  during training: Gender, Married, Dependents, Education, Self_Employed,
-  ApplicantIncome, CoapplicantIncome, LoanAmount, Loan_Amount_Term,
-  Credit_History, Property_Area.
-- The notebook uses `imbalanced-learn`'s `SMOTE` for class balancing — make
-  sure it's installed (`pip install imbalanced-learn`) before running it.
+## Tools used
+
+The project is built in Python using Pandas and NumPy for handling data, Scikit-learn for building the models, Seaborn and Matplotlib for charts, and Flask for the website itself.
+
+## Running it yourself
+
+Clone the project, install the requirements with pip, then go into the Flask folder and run `python app.py`. Open the link it shows in your terminal, click Predict, fill in the form, and you'll see the result right away.
+
+## What's next
+
+Down the line, this could be improved by adding more financial details, checking credit scores in real time, and trying stronger models to make the predictions even more accurate.
+
