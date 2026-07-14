@@ -1,4 +1,4 @@
-##SMART LENDER :
+## SMART LENDER :
 Smart Lender is a simple web app that predicts whether a loan should be approved or rejected. It looks at details like income, credit history, education, and marital status, and gives an instant answer using a machine learning model.
 
 Banks usually check loan applications by hand, which takes time and can be inconsistent. This project makes that process faster and fairer by letting a trained model do the first check.
