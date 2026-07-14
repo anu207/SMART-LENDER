@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Lender - Predict</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/input.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>Applicant Details</h2>
+    <form action="{{ url_for('submit') }}" method="POST">
+
+      <label for="Gender">Gender</label>
+      <select name="Gender" id="Gender" required>
+        <option value="1">Male</option>
+        <option value="0">Female</option>
+      </select>
+
+      <label for="Married">Married</label>
+      <select name="Married" id="Married" required>
+        <option value="1">Yes</option>
+        <option value="0">No</option>
+      </select>
+
+      <label for="Dependents">Dependents</label>
+      <select name="Dependents" id="Dependents" required>
+        <option value="0">0</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3+</option>
+      </select>
+
+      <label for="Education">Education</label>
+      <select name="Education" id="Education" required>
+        <option value="1">Graduate</option>
+        <option value="0">Not Graduate</option>
+      </select>
+
+      <label for="Self_Employed">Self Employed</label>
+      <select name="Self_Employed" id="Self_Employed" required>
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+
+      <label for="ApplicantIncome">Applicant Income (monthly)</label>
+      <input type="number" name="ApplicantIncome" id="ApplicantIncome" required>
+
+      <label for="CoapplicantIncome">Coapplicant Income (monthly)</label>
+      <input type="number" name="CoapplicantIncome" id="CoapplicantIncome" required>
+
+      <label for="LoanAmount">Loan Amount (in thousands)</label>
+      <input type="number" name="LoanAmount" id="LoanAmount" required>
+
+      <label for="Loan_Amount_Term">Loan Amount Term (days)</label>
+      <select name="Loan_Amount_Term" id="Loan_Amount_Term" required>
+        <option value="360">360</option>
+        <option value="180">180</option>
+        <option value="120">120</option>
+        <option value="84">84</option>
+        <option value="60">60</option>
+        <option value="36">36</option>
+        <option value="12">12</option>
+      </select>
+
+      <label for="Credit_History">Credit History</label>
+      <select name="Credit_History" id="Credit_History" required>
+        <option value="1">Good (1)</option>
+        <option value="0">Bad (0)</option>
+      </select>
+
+      <label for="Property_Area">Property Area</label>
+      <select name="Property_Area" id="Property_Area" required>
+        <option value="2">Urban</option>
+        <option value="1">Semiurban</option>
+        <option value="0">Rural</option>
+      </select>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+</body>
+</html>

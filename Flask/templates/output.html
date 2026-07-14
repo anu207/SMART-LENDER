@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Smart Lender - Result</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/input.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h2>Prediction Result</h2>
+    <div class="result-box">
+      {% if prediction == 1 %}
+        <p class="result-approved">&#10003; Loan Approved</p>
+      {% else %}
+        <p class="result-rejected">&#10007; Loan Rejected</p>
+      {% endif %}
+    </div>
+    <div style="text-align:center;">
+      <a class="home-btn" href="{{ url_for('home') }}">Back to Home</a>
+    </div>
+  </div>
+</body>
+</html>

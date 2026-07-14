@@ -1,0 +1,93 @@
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f4f6f8;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 480px;
+  margin: 40px auto;
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+h1, h2 {
+  text-align: center;
+  color: #04AA6D;
+}
+
+p.subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 24px;
+}
+
+label {
+  display: block;
+  margin-top: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], input[type=number], select, textarea {
+  width: 100%;          /* Full width */
+  padding: 12px;         /* Some padding */
+  border: 1px solid #ccc;/* Gray border */
+  border-radius: 4px;    /* Rounded borders */
+  box-sizing: border-box;/* Make sure that padding and width stays in place */
+  margin-top: 6px;       /* Add a top margin */
+  margin-bottom: 16px;   /* Bottom margin */
+  resize: vertical;      /* Allow the user to vertically resize the textarea (not horizontally) */
+  font-size: 14px;
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+input[type=submit]:hover {
+  background-color: #038f5c;
+}
+
+.home-btn {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-size: 16px;
+  margin-top: 20px;
+}
+
+.result-approved {
+  text-align: center;
+  color: #04AA6D;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.result-rejected {
+  text-align: center;
+  color: #d9534f;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.result-box {
+  text-align: center;
+  margin-top: 20px;
+}
